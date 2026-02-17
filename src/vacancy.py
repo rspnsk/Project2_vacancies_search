@@ -1,10 +1,12 @@
 from typing import Optional, Any, Dict
 
+
 class Vacancy:
     """Класс реализации вакансий"""
     __slots__ = ("name", "salary", "url", "description", "salary_from", "salary_to")
 
-    def __init__(self, name: str, salary: Optional[Dict[str, Any]], url: str, description: str) -> None:
+    def __init__(self, name: str, salary: Optional[Dict[str, Any]],
+                 url: str, description: str) -> None:
         """Метод инициализации параметров вакансий"""
         self.name = name
         self.url = url
@@ -17,7 +19,7 @@ class Vacancy:
                 f"Ссылка на вакансию: {self.url},\n"
                 f"Зарплата: от {self.salary_from} до {self.salary_to},\n"
                 f"Описание вакансии: {self.description}\n"
-                f"{'-'*30}")
+                f"{'-' * 30}")
 
     def __validate_salary(self, salary: Optional[Dict[str, Any]]) -> None:
         """
@@ -51,4 +53,5 @@ class Vacancy:
     def to_dict(cls, vacancy):
         """Метод преобразование в словарь"""
         return {"name": vacancy.name, "url": vacancy.url,
-                "salary": {"from": vacancy.salary_from, "to": vacancy.salary_to}, "description": vacancy.description}
+                "salary": {"from": vacancy.salary_from, "to": vacancy.salary_to},
+                "description": vacancy.description}

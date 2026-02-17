@@ -22,6 +22,11 @@ build-backend = "poetry.core.masonry.api"
 pytest = "^9.0.2"
 
 # pyproject.toml
+
+[tool.poetry.group.lint.dependencies]
+flake8 = "^7.3.0"
+mypy = "^1.19.1"
+
 [tool.pytest.ini_options]
 pythonpath = [
     ".",

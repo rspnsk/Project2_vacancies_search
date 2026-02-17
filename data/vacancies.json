@@ -1253,7 +1253,46 @@
     {
         "name": "Java-разработчик в Core-команду",
         "url": "https://hh.ru/vacancy/130360071",
-        "salary": null,
+        "salary": {
+            "from": 0,
+            "to": 0
+        },
         "description": "...умение итеративной поставки продукта, а также знание Spring AI, опыт использования LLM, написание промтов, CI/CD, опыт разработки на <highlighttext>Python</highlighttext>."
+    },
+    {
+        "name": "Backend-разработчик (Python / FastAPI / Telegram Bot)",
+        "url": "https://hh.ru/vacancy/130480643",
+        "salary": {
+            "from": 50000,
+            "to": 75000
+        },
+        "description": "<highlighttext>Python</highlighttext> 3.11+. FastAPI. Pydantic v2. SQLAlchemy 2.x. Alembic. PostgreSQL. Aiogram 3.x. Docker / Docker Compose. Pytest. "
+    },
+    {
+        "name": "Стажер Backend Developer (Python / DRF)",
+        "url": "https://hh.ru/vacancy/130540433",
+        "salary": {
+            "from": 0,
+            "to": 0
+        },
+        "description": "Уверенное владение Django, FastAPI. Отличное знание REST API принципов. Уверенный опыт работы с SQL. Опыт работы с Celery и Redis. "
+    },
+    {
+        "name": "Python-разработчик / Junior Developer",
+        "url": "https://hh.ru/vacancy/130543682",
+        "salary": {
+            "from": 0,
+            "to": 0
+        },
+        "description": "Базовые знания <highlighttext>Python</highlighttext> (понимание ООП, основных структур данных, исключений). Понимание принципов работы REST API. Желание разбираться с парсингом данных и..."
+    },
+    {
+        "name": "Аналитик",
+        "url": "https://hh.ru/vacancy/130520103",
+        "salary": {
+            "from": 0,
+            "to": 0
+        },
+        "description": "Навыки финансового анализа, включая DCF-модели. Глубокое понимание требований МСФО9 (будет преимуществом). Навыки работы в <highlighttext>Python</highlighttext> (будет преимуществом)."
     }
 ]

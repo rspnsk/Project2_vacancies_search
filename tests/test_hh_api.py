@@ -3,6 +3,7 @@ from unittest.mock import patch, MagicMock
 from src.hh_api import HeadHunterAPI
 import requests_mock
 
+
 def test_initialization(hh_api):
     """Проверка инициализации параметров"""
     assert getattr(hh_api, '_HeadHunterAPI__url') == "https://api.hh.ru/vacancies"
@@ -33,12 +34,14 @@ def test_connect_failure(mock_get, hh_api):
     result = hh_api._connect()
     assert result is None
 
+
 # Тестирование метода load_vacancies
 def test_load_vacancies():
     with requests_mock.Mocker() as m:
-        m.get("https://api.hh.ru/vacancies", json={"items": [{"name": "Python Developer",
-                                                 "alternate_url": "https://example.com/vacancy1",
-                                                 "salary": {"from": 100000, "to": 150000}, "snippet": {"requirement": "Опыт работы с Python"}}]})
+        m.get("https://api.hh.ru/vacancies",
+              json={"items": [{"name": "Python Developer",
+                    "alternate_url": "https://example.com/vacancy1",
+                    "salary": {"from": 100000, "to": 150000}, "snippet": {"requirement": "Опыт работы с Python"}}]})
         api = HeadHunterAPI()
         result = api.load_vacancies("Python разработчик")
         assert len(result) == 5
@@ -46,4 +49,3 @@ def test_load_vacancies():
         assert result[0]["url"] == "https://example.com/vacancy1"
         assert result[0]["salary"] == {"from": 100000, "to": 150000}
         assert result[0]["description"] == "Опыт работы с Python"
-

@@ -49,5 +49,3 @@ def test_delete_vacancies(json_saver, test_file, vacancy_data):
     with open(test_file, "r", encoding="utf-8") as f:
         data = json.load(f)
     assert len(data) == 0
-
-

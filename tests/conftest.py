@@ -1,5 +1,4 @@
 import pytest
-import os
 from src.hh_api import HeadHunterAPI
 from src.json_saver import JSONSaver
 from src.vacancy import Vacancy
@@ -10,24 +9,28 @@ from src.vacancy import Vacancy
 def hh_api():
     return HeadHunterAPI()
 
+
 # Фикстура для создания тестового файла
 @pytest.fixture
 def test_file(tmp_path):
     file_path = tmp_path / "test_vacancies.json"
     return str(file_path)
 
+
 # Фикстура для создания экземпляра JSONSaver.
 @pytest.fixture
 def json_saver(test_file):
     return JSONSaver(test_file)
 
+
 # Фикстура для создания тестовых данных вакансии. (возвращает словарь (dict)).
 @pytest.fixture
 def vacancy_data():
-   return {"name": "Python Developer",
+    return {"name": "Python Developer",
             "url": "https://example.com/vacancy1",
             "salary": {"from": 100000, "to": 150000},
             "description": "Опыт работы с Python"}
+
 
 # Фикстуры для создания тестовых данных вакансии. (возвращает экземпляр класса Vacancy).
 @pytest.fixture
@@ -38,6 +41,7 @@ def sample_vacancy():
         url="https://hh.ru/vacancy/123 ",
         description="Требуется Python разработчик")
 
+
 @pytest.fixture
 def vacancy_without_salary():
     return Vacancy(
@@ -46,9 +50,11 @@ def vacancy_without_salary():
         url="https://hh.ru/vacancy/456 ",
         description="Требуется Java разработчик")
 
+
 def json_sav_test():
     """Создает экземпляр JSONSaver для тестирования."""
     return JSONSaver(path="test_vacancies.json")
+
 
 @pytest.fixture
 def sample_vacancies():

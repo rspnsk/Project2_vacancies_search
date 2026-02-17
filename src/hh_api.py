@@ -16,14 +16,16 @@ class AbstractAPI(ABC):
 class HeadHunterAPI(AbstractAPI):
     """ Класс для соединения с АПИ """
     def __init__(self):
-        """Инициализирует класс, устанавливая базовый URL для API hh.ru (https://api.hh.ru/vacancies).
+        """Инициализирует класс, устанавливая базовый URL для API hh.ru.
            Задает параметры запроса по умолчанию: text (поисковый запрос),
-           per_page (количество вакансий на странице, 20), page (номер страницы, начинается с 0)."""
+           per_page (количество вакансий на странице, 20),
+           page (номер страницы, начинается с 0)."""
         self.__url = "https://api.hh.ru/vacancies"
         self.__params = {"text": "", "per_page": 20, "page": 0}
 
     def _connect(self):
-        """ Выполняет GET-запрос к API hh.ru. Если запрос успешен (код ответа 200), возвращает данные в формате JSON.
+        """ Выполняет GET-запрос к API hh.ru. Если запрос успешен (код ответа 200),
+            возвращает данные в формате JSON.
             В случае ошибки соединения выводит сообщение "Ошибка соединения"."""
         response = requests.get(self.__url, params=self.__params)
         if response.status_code == 200:
@@ -65,5 +67,3 @@ if __name__ == "__main__":
     # Печатаем результаты
     for vacancy in hh_vacancies:
         print(vacancy)
-
-
